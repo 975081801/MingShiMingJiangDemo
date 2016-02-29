@@ -1,0 +1,19 @@
+//
+//  Famous-Prefix.pch
+//  MingShiMingJiangDemo
+//
+//  Created by 管复生 on 16/2/29.
+//  Copyright © 2016年 GFS. All rights reserved.
+//
+
+#ifndef Famous_Prefix_pch
+#define Famous_Prefix_pch
+
+#import "UIImage+GFS.h"
+
+// 判断是否为iOS7以上
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+// 设置颜色
+#define GFSColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#endif /* Famous_Prefix_pch */
