@@ -35,6 +35,20 @@
 		EEF34D3A1C842B1500E058CC /* GFSMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D381C842B1500E058CC /* GFSMeViewController.m */; };
 		EEF34D3D1C842C4C00E058CC /* UIImage+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D3C1C842C4C00E058CC /* UIImage+GFS.m */; };
 		EEF34D3E1C842C4C00E058CC /* UIImage+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D3C1C842C4C00E058CC /* UIImage+GFS.m */; };
+		EEF34D411C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D401C8434C700E058CC /* UIBarButtonItem+GFS.m */; };
+		EEF34D421C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D401C8434C700E058CC /* UIBarButtonItem+GFS.m */; };
+		EEF34D451C84359700E058CC /* GFSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D441C84359700E058CC /* GFSButton.m */; };
+		EEF34D461C84359700E058CC /* GFSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D441C84359700E058CC /* GFSButton.m */; };
+		EEF34D491C843D1700E058CC /* GFSCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */; };
+		EEF34D4A1C843D1700E058CC /* GFSCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */; };
+		EEF34D4D1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D4C1C843EE000E058CC /* GFSCityViewHeaderView.m */; };
+		EEF34D4E1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D4C1C843EE000E058CC /* GFSCityViewHeaderView.m */; };
+		EEF34D551C84477000E058CC /* NSString+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D541C84477000E058CC /* NSString+GFS.m */; };
+		EEF34D561C84477000E058CC /* NSString+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D541C84477000E058CC /* NSString+GFS.m */; };
+		EEF34D591C845D6D00E058CC /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */; };
+		EEF34D5A1C845D6D00E058CC /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */; };
+		EEF34D5D1C845E2800E058CC /* GFSCity.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D5C1C845E2800E058CC /* GFSCity.m */; };
+		EEF34D5E1C845E2800E058CC /* GFSCity.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D5C1C845E2800E058CC /* GFSCity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +103,20 @@
 		EEF34D381C842B1500E058CC /* GFSMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSMeViewController.m; sourceTree = "<group>"; };
 		EEF34D3B1C842C4C00E058CC /* UIImage+GFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GFS.h"; sourceTree = "<group>"; };
 		EEF34D3C1C842C4C00E058CC /* UIImage+GFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GFS.m"; sourceTree = "<group>"; };
+		EEF34D3F1C8434C700E058CC /* UIBarButtonItem+GFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GFS.h"; sourceTree = "<group>"; };
+		EEF34D401C8434C700E058CC /* UIBarButtonItem+GFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GFS.m"; sourceTree = "<group>"; };
+		EEF34D431C84359700E058CC /* GFSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSButton.h; sourceTree = "<group>"; };
+		EEF34D441C84359700E058CC /* GFSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSButton.m; sourceTree = "<group>"; };
+		EEF34D471C843D1700E058CC /* GFSCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSCitiesViewController.h; sourceTree = "<group>"; };
+		EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSCitiesViewController.m; sourceTree = "<group>"; };
+		EEF34D4B1C843EE000E058CC /* GFSCityViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSCityViewHeaderView.h; sourceTree = "<group>"; };
+		EEF34D4C1C843EE000E058CC /* GFSCityViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSCityViewHeaderView.m; sourceTree = "<group>"; };
+		EEF34D531C84477000E058CC /* NSString+GFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GFS.h"; sourceTree = "<group>"; };
+		EEF34D541C84477000E058CC /* NSString+GFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GFS.m"; sourceTree = "<group>"; };
+		EEF34D571C845D6D00E058CC /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
+		EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
+		EEF34D5B1C845E2800E058CC /* GFSCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSCity.h; sourceTree = "<group>"; };
+		EEF34D5C1C845E2800E058CC /* GFSCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSCity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +266,10 @@
 			children = (
 				EEF34D3B1C842C4C00E058CC /* UIImage+GFS.h */,
 				EEF34D3C1C842C4C00E058CC /* UIImage+GFS.m */,
+				EEF34D3F1C8434C700E058CC /* UIBarButtonItem+GFS.h */,
+				EEF34D401C8434C700E058CC /* UIBarButtonItem+GFS.m */,
+				EEF34D531C84477000E058CC /* NSString+GFS.h */,
+				EEF34D541C84477000E058CC /* NSString+GFS.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -252,6 +284,8 @@
 		EEF34CFF1C841BFF00E058CC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EEF34D571C845D6D00E058CC /* ChineseToPinyin.h */,
+				EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -271,6 +305,8 @@
 			children = (
 				EEF34D271C842AB500E058CC /* GFSHomeCollectionViewController.h */,
 				EEF34D281C842AB500E058CC /* GFSHomeCollectionViewController.m */,
+				EEF34D471C843D1700E058CC /* GFSCitiesViewController.h */,
+				EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,6 +314,8 @@
 		EEF34D031C841C1E00E058CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EEF34D5B1C845E2800E058CC /* GFSCity.h */,
+				EEF34D5C1C845E2800E058CC /* GFSCity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +323,10 @@
 		EEF34D041C841C1E00E058CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EEF34D431C84359700E058CC /* GFSButton.h */,
+				EEF34D441C84359700E058CC /* GFSButton.m */,
+				EEF34D4B1C843EE000E058CC /* GFSCityViewHeaderView.h */,
+				EEF34D4C1C843EE000E058CC /* GFSCityViewHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,14 +543,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF34D4D1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */,
 				EEF34D351C842AF300E058CC /* GFSMessageViewController.m in Sources */,
+				EEF34D411C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */,
+				EEF34D591C845D6D00E058CC /* ChineseToPinyin.m in Sources */,
+				EEF34D5D1C845E2800E058CC /* GFSCity.m in Sources */,
+				EEF34D551C84477000E058CC /* NSString+GFS.m in Sources */,
 				EEF34D3D1C842C4C00E058CC /* UIImage+GFS.m in Sources */,
 				EEF34D291C842AB500E058CC /* GFSHomeCollectionViewController.m in Sources */,
 				EEF34D191C84267B00E058CC /* GFSTabBarController.m in Sources */,
 				EEF34D391C842B1500E058CC /* GFSMeViewController.m in Sources */,
+				EEF34D451C84359700E058CC /* GFSButton.m in Sources */,
 				EEF34D151C84262A00E058CC /* GFSNavigationController.m in Sources */,
 				EEF34D001C841BFF00E058CC /* AppDelegate.m in Sources */,
 				EEF34D1D1C8428CC00E058CC /* GFSCollectionViewController.m in Sources */,
+				EEF34D491C843D1700E058CC /* GFSCitiesViewController.m in Sources */,
 				EEF34D211C8428E600E058CC /* GFSTableViewController.m in Sources */,
 				EEF34CC51C841A0B00E058CC /* main.m in Sources */,
 				EEF34D251C84290100E058CC /* GFSViewController.m in Sources */,
@@ -519,15 +568,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF34D4E1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */,
 				EEF34D161C84262A00E058CC /* GFSNavigationController.m in Sources */,
 				EEF34D361C842AF300E058CC /* GFSMessageViewController.m in Sources */,
+				EEF34D461C84359700E058CC /* GFSButton.m in Sources */,
 				EEF34D3E1C842C4C00E058CC /* UIImage+GFS.m in Sources */,
+				EEF34D4A1C843D1700E058CC /* GFSCitiesViewController.m in Sources */,
 				EEF34D1A1C84267B00E058CC /* GFSTabBarController.m in Sources */,
 				EEF34D221C8428E600E058CC /* GFSTableViewController.m in Sources */,
 				EEF34D261C84290100E058CC /* GFSViewController.m in Sources */,
 				EEF34CDE1C841A0B00E058CC /* MingShiMingJiangDemoTests.m in Sources */,
+				EEF34D421C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */,
+				EEF34D561C84477000E058CC /* NSString+GFS.m in Sources */,
 				EEF34D1E1C8428CC00E058CC /* GFSCollectionViewController.m in Sources */,
 				EEF34D3A1C842B1500E058CC /* GFSMeViewController.m in Sources */,
+				EEF34D5E1C845E2800E058CC /* GFSCity.m in Sources */,
+				EEF34D5A1C845D6D00E058CC /* ChineseToPinyin.m in Sources */,
 				EEF34D2A1C842AB500E058CC /* GFSHomeCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

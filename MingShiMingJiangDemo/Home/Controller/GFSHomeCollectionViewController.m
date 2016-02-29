@@ -7,9 +7,10 @@
 //
 
 #import "GFSHomeCollectionViewController.h"
-
-@interface GFSHomeCollectionViewController ()
-
+#import "GFSButton.h"
+#import "GFSCitiesViewController.h"
+@interface GFSHomeCollectionViewController ()<UISearchBarDelegate>
+@property(nonatomic,weak)UISearchBar *centerSearcher;
 @end
 
 @implementation GFSHomeCollectionViewController
@@ -19,28 +20,94 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
+    // 设置导航栏按钮
+    [self setupNavBarButton];
     // Register cell classes
 //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     self.view.backgroundColor = [UIColor grayColor];
 }
-
+/**
+ *  设置导航栏按钮
+ */
+- (void)setupNavBarButton
+{
+    // 左边按钮(自定义)
+    GFSButton *leftButton = [[GFSButton alloc]init];
+    leftButton.frame = CGRectMake(0, 0, 40, 40);
+//    leftButton.backgroundColor = [UIColor grayColor];
+    [leftButton setTitle:@"广州" forState:UIControlStateNormal];
+    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    // 中间搜索
+    UISearchBar *centerSearcher = [[UISearchBar alloc]init];
+    // 图标
+    centerSearcher.placeholder = @"搜索你想要的";
+    centerSearcher.contentMode = UIViewContentModeLeft;
+    // 位置和尺寸
+    centerSearcher.frame = CGRectMake(0, 0, 80, 40);
+    
+    self.navigationItem.titleView = centerSearcher;
+    self.centerSearcher = centerSearcher;
+    
+}
+/**
+ *  定位地址点击事件
+ *
+ *  @param button 按钮
+ */
+- (void)leftButtonClicked:(GFSButton *)button
+{
+    UIViewController *cities = [[GFSCitiesViewController alloc]init];
+    
+    [self.navigationController pushViewController:cities animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UISearchBarDelegate
+/** 搜索框结束编辑（退出键盘） */
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    // 如果正在dissmis，就不要执行后面代码
+    if (self.isBeingDismissed) return;
+    
+    // 更换背景
+//    searchBar.backgroundImage = [UIImage imageNamed:@""];
+    // 隐藏取消按钮
+    [searchBar setShowsCancelButton:NO animated:YES];
+    
+    // 清空文字
+    searchBar.text = nil;
+    // 移除搜索结果界面
+//    [self.SearchVc.view removeFromSuperview];
 }
-*/
+
+/** 搜索框开始编辑（弹出键盘） */
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    // 更换背景
+//    searchBar.backgroundImage = [UIImage imageNamed:@""];
+    // 显示取消按钮
+    [searchBar setShowsCancelButton:YES animated:YES];
+    
+}
+
+/** 点击了取消 */
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar endEditing:YES];
+}
+
+/** 搜索框的文字发生改变的时候调用 */
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    // 弹出搜索界面
+    
+}
 
 #pragma mark <UICollectionViewDataSource>
 
