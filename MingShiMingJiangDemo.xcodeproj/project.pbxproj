@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE16CFB61C86022100636C13 /* GFSHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE16CFB51C86022100636C13 /* GFSHomeCollectionViewCell.m */; };
+		EE16CFB81C86023E00636C13 /* GFSHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE16CFB71C86023E00636C13 /* GFSHomeCollectionViewCell.xib */; };
+		EE6D2B0B1C8528D200CDB817 /* GFSShowCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6D2B0A1C8528D200CDB817 /* GFSShowCityButton.m */; };
 		EEF34CC51C841A0B00E058CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34CC41C841A0B00E058CC /* main.m */; };
 		EEF34CD31C841A0B00E058CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF34CD11C841A0B00E058CC /* LaunchScreen.storyboard */; };
 		EEF34CDE1C841A0B00E058CC /* MingShiMingJiangDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34CDD1C841A0B00E058CC /* MingShiMingJiangDemoTests.m */; };
@@ -37,8 +40,6 @@
 		EEF34D3E1C842C4C00E058CC /* UIImage+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D3C1C842C4C00E058CC /* UIImage+GFS.m */; };
 		EEF34D411C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D401C8434C700E058CC /* UIBarButtonItem+GFS.m */; };
 		EEF34D421C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D401C8434C700E058CC /* UIBarButtonItem+GFS.m */; };
-		EEF34D451C84359700E058CC /* GFSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D441C84359700E058CC /* GFSButton.m */; };
-		EEF34D461C84359700E058CC /* GFSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D441C84359700E058CC /* GFSButton.m */; };
 		EEF34D491C843D1700E058CC /* GFSCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */; };
 		EEF34D4A1C843D1700E058CC /* GFSCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */; };
 		EEF34D4D1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D4C1C843EE000E058CC /* GFSCityViewHeaderView.m */; };
@@ -49,6 +50,14 @@
 		EEF34D5A1C845D6D00E058CC /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */; };
 		EEF34D5D1C845E2800E058CC /* GFSCity.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D5C1C845E2800E058CC /* GFSCity.m */; };
 		EEF34D5E1C845E2800E058CC /* GFSCity.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D5C1C845E2800E058CC /* GFSCity.m */; };
+		EEF34D601C8476BE00E058CC /* mainlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEF34D5F1C8476BE00E058CC /* mainlist.plist */; };
+		EEF34D611C8476BE00E058CC /* mainlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEF34D5F1C8476BE00E058CC /* mainlist.plist */; };
+		EEF34D681C84881300E058CC /* GFSAreaLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D671C84881300E058CC /* GFSAreaLocationView.m */; };
+		EEF34D691C84881300E058CC /* GFSAreaLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D671C84881300E058CC /* GFSAreaLocationView.m */; };
+		EEF34D6C1C84B4AE00E058CC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF34D6B1C84B4AD00E058CC /* MapKit.framework */; };
+		EEF34D6E1C84B4B800E058CC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF34D6D1C84B4B800E058CC /* CoreLocation.framework */; };
+		EEF34D711C84B9D200E058CC /* GFSLocateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D701C84B9D200E058CC /* GFSLocateTool.m */; };
+		EEF34D721C84B9D200E058CC /* GFSLocateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34D701C84B9D200E058CC /* GFSLocateTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +78,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE16CFB41C86022100636C13 /* GFSHomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSHomeCollectionViewCell.h; sourceTree = "<group>"; };
+		EE16CFB51C86022100636C13 /* GFSHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSHomeCollectionViewCell.m; sourceTree = "<group>"; };
+		EE16CFB71C86023E00636C13 /* GFSHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFSHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE6D2B091C8528D200CDB817 /* GFSShowCityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSShowCityButton.h; sourceTree = "<group>"; };
+		EE6D2B0A1C8528D200CDB817 /* GFSShowCityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSShowCityButton.m; sourceTree = "<group>"; };
 		EEF34CC01C841A0B00E058CC /* MingShiMingJiangDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MingShiMingJiangDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF34CC41C841A0B00E058CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EEF34CD21C841A0B00E058CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,8 +119,6 @@
 		EEF34D3C1C842C4C00E058CC /* UIImage+GFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GFS.m"; sourceTree = "<group>"; };
 		EEF34D3F1C8434C700E058CC /* UIBarButtonItem+GFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GFS.h"; sourceTree = "<group>"; };
 		EEF34D401C8434C700E058CC /* UIBarButtonItem+GFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GFS.m"; sourceTree = "<group>"; };
-		EEF34D431C84359700E058CC /* GFSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSButton.h; sourceTree = "<group>"; };
-		EEF34D441C84359700E058CC /* GFSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSButton.m; sourceTree = "<group>"; };
 		EEF34D471C843D1700E058CC /* GFSCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSCitiesViewController.h; sourceTree = "<group>"; };
 		EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSCitiesViewController.m; sourceTree = "<group>"; };
 		EEF34D4B1C843EE000E058CC /* GFSCityViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSCityViewHeaderView.h; sourceTree = "<group>"; };
@@ -117,6 +129,14 @@
 		EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
 		EEF34D5B1C845E2800E058CC /* GFSCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSCity.h; sourceTree = "<group>"; };
 		EEF34D5C1C845E2800E058CC /* GFSCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSCity.m; sourceTree = "<group>"; };
+		EEF34D5F1C8476BE00E058CC /* mainlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainlist.plist; sourceTree = "<group>"; };
+		EEF34D661C84881200E058CC /* GFSAreaLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSAreaLocationView.h; sourceTree = "<group>"; };
+		EEF34D671C84881300E058CC /* GFSAreaLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSAreaLocationView.m; sourceTree = "<group>"; };
+		EEF34D6A1C84A80B00E058CC /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		EEF34D6B1C84B4AD00E058CC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EEF34D6D1C84B4B800E058CC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EEF34D6F1C84B9D200E058CC /* GFSLocateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSLocateTool.h; sourceTree = "<group>"; };
+		EEF34D701C84B9D200E058CC /* GFSLocateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSLocateTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF34D6E1C84B4B800E058CC /* CoreLocation.framework in Frameworks */,
+				EEF34D6C1C84B4AE00E058CC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +166,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE16CFA91C85E67400636C13 /* LBS */ = {
+			isa = PBXGroup;
+			children = (
+				EEF34D661C84881200E058CC /* GFSAreaLocationView.h */,
+				EEF34D671C84881300E058CC /* GFSAreaLocationView.m */,
+				EEF34D4B1C843EE000E058CC /* GFSCityViewHeaderView.h */,
+				EEF34D4C1C843EE000E058CC /* GFSCityViewHeaderView.m */,
+			);
+			name = LBS;
+			sourceTree = "<group>";
+		};
 		EEF34CB71C841A0A00E058CC = {
 			isa = PBXGroup;
 			children = (
+				EEF34D6D1C84B4B800E058CC /* CoreLocation.framework */,
+				EEF34D6B1C84B4AD00E058CC /* MapKit.framework */,
 				EEF34CC21C841A0B00E058CC /* MingShiMingJiangDemo */,
 				EEF34CDC1C841A0B00E058CC /* MingShiMingJiangDemoTests */,
 				EEF34CE71C841A0B00E058CC /* MingShiMingJiangDemoUITests */,
@@ -284,8 +319,11 @@
 		EEF34CFF1C841BFF00E058CC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EEF34D6A1C84A80B00E058CC /* Singleton.h */,
 				EEF34D571C845D6D00E058CC /* ChineseToPinyin.h */,
 				EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */,
+				EEF34D6F1C84B9D200E058CC /* GFSLocateTool.h */,
+				EEF34D701C84B9D200E058CC /* GFSLocateTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -323,10 +361,12 @@
 		EEF34D041C841C1E00E058CC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EEF34D431C84359700E058CC /* GFSButton.h */,
-				EEF34D441C84359700E058CC /* GFSButton.m */,
-				EEF34D4B1C843EE000E058CC /* GFSCityViewHeaderView.h */,
-				EEF34D4C1C843EE000E058CC /* GFSCityViewHeaderView.m */,
+				EE16CFA91C85E67400636C13 /* LBS */,
+				EE6D2B091C8528D200CDB817 /* GFSShowCityButton.h */,
+				EE6D2B0A1C8528D200CDB817 /* GFSShowCityButton.m */,
+				EE16CFB41C86022100636C13 /* GFSHomeCollectionViewCell.h */,
+				EE16CFB51C86022100636C13 /* GFSHomeCollectionViewCell.m */,
+				EE16CFB71C86023E00636C13 /* GFSHomeCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +376,7 @@
 			children = (
 				EEF34D0D1C84247000E058CC /* citiesArray.plist */,
 				EEF34D0E1C84247000E058CC /* newarea.plist */,
+				EEF34D5F1C8476BE00E058CC /* mainlist.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -515,8 +556,10 @@
 			files = (
 				EEF34D091C84223800E058CC /* Images.xcassets in Resources */,
 				EEF34D0F1C84247000E058CC /* citiesArray.plist in Resources */,
+				EE16CFB81C86023E00636C13 /* GFSHomeCollectionViewCell.xib in Resources */,
 				EEF34D111C84247000E058CC /* newarea.plist in Resources */,
 				EEF34CD31C841A0B00E058CC /* LaunchScreen.storyboard in Resources */,
+				EEF34D601C8476BE00E058CC /* mainlist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF34D121C84247000E058CC /* newarea.plist in Resources */,
+				EEF34D611C8476BE00E058CC /* mainlist.plist in Resources */,
 				EEF34D101C84247000E058CC /* citiesArray.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,18 +588,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF34D4D1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */,
+				EE16CFB61C86022100636C13 /* GFSHomeCollectionViewCell.m in Sources */,
 				EEF34D351C842AF300E058CC /* GFSMessageViewController.m in Sources */,
 				EEF34D411C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */,
 				EEF34D591C845D6D00E058CC /* ChineseToPinyin.m in Sources */,
+				EE6D2B0B1C8528D200CDB817 /* GFSShowCityButton.m in Sources */,
 				EEF34D5D1C845E2800E058CC /* GFSCity.m in Sources */,
+				EEF34D681C84881300E058CC /* GFSAreaLocationView.m in Sources */,
 				EEF34D551C84477000E058CC /* NSString+GFS.m in Sources */,
 				EEF34D3D1C842C4C00E058CC /* UIImage+GFS.m in Sources */,
 				EEF34D291C842AB500E058CC /* GFSHomeCollectionViewController.m in Sources */,
 				EEF34D191C84267B00E058CC /* GFSTabBarController.m in Sources */,
 				EEF34D391C842B1500E058CC /* GFSMeViewController.m in Sources */,
-				EEF34D451C84359700E058CC /* GFSButton.m in Sources */,
 				EEF34D151C84262A00E058CC /* GFSNavigationController.m in Sources */,
 				EEF34D001C841BFF00E058CC /* AppDelegate.m in Sources */,
+				EEF34D711C84B9D200E058CC /* GFSLocateTool.m in Sources */,
 				EEF34D1D1C8428CC00E058CC /* GFSCollectionViewController.m in Sources */,
 				EEF34D491C843D1700E058CC /* GFSCitiesViewController.m in Sources */,
 				EEF34D211C8428E600E058CC /* GFSTableViewController.m in Sources */,
@@ -568,10 +615,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF34D721C84B9D200E058CC /* GFSLocateTool.m in Sources */,
 				EEF34D4E1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */,
 				EEF34D161C84262A00E058CC /* GFSNavigationController.m in Sources */,
 				EEF34D361C842AF300E058CC /* GFSMessageViewController.m in Sources */,
-				EEF34D461C84359700E058CC /* GFSButton.m in Sources */,
 				EEF34D3E1C842C4C00E058CC /* UIImage+GFS.m in Sources */,
 				EEF34D4A1C843D1700E058CC /* GFSCitiesViewController.m in Sources */,
 				EEF34D1A1C84267B00E058CC /* GFSTabBarController.m in Sources */,
@@ -579,6 +626,7 @@
 				EEF34D261C84290100E058CC /* GFSViewController.m in Sources */,
 				EEF34CDE1C841A0B00E058CC /* MingShiMingJiangDemoTests.m in Sources */,
 				EEF34D421C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */,
+				EEF34D691C84881300E058CC /* GFSAreaLocationView.m in Sources */,
 				EEF34D561C84477000E058CC /* NSString+GFS.m in Sources */,
 				EEF34D1E1C8428CC00E058CC /* GFSCollectionViewController.m in Sources */,
 				EEF34D3A1C842B1500E058CC /* GFSMeViewController.m in Sources */,
@@ -708,6 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MingShiMingJiangDemo/Other/Famous-Prefix.pch";
 				INFOPLIST_FILE = MingShiMingJiangDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -721,6 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MingShiMingJiangDemo/Other/Famous-Prefix.pch";
 				INFOPLIST_FILE = MingShiMingJiangDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -800,6 +850,7 @@
 				EEF34CEF1C841A0B00E058CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEF34CF01C841A0B00E058CC /* Build configuration list for PBXNativeTarget "MingShiMingJiangDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -808,6 +859,7 @@
 				EEF34CF21C841A0B00E058CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEF34CF31C841A0B00E058CC /* Build configuration list for PBXNativeTarget "MingShiMingJiangDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -816,6 +868,7 @@
 				EEF34CF51C841A0B00E058CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

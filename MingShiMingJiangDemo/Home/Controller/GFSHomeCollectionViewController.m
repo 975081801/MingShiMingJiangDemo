@@ -7,67 +7,81 @@
 //
 
 #import "GFSHomeCollectionViewController.h"
-#import "GFSButton.h"
 #import "GFSCitiesViewController.h"
-@interface GFSHomeCollectionViewController ()<UISearchBarDelegate>
+#import "GFSHomeCollectionViewCell.h"
+@interface GFSHomeCollectionViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,weak)UISearchBar *centerSearcher;
+
+@property(nonatomic,copy)NSString *cityButtonTitle;
+
+@property(nonatomic,strong)NSArray *imageArray;
 @end
 
 @implementation GFSHomeCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
-
+static NSString * const ID = @"bottomcell";
+#pragma mark- 初始化和懒加载
+- (NSArray *)imageArray
+{
+    if (!_imageArray) {
+        NSMutableArray *array = [NSMutableArray array];
+        if (iPhone6Plus) {
+            // 加载@3x图
+            for (int i = 20; i< 57; i++) {
+                UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"960_%d",i]];
+                // 由于序号不连续  判断是否有图片
+                if (image) {// 有图片
+                    [array addObject:image];
+                }
+            }
+        }else{
+            
+            // 加载@2x图
+            for (int i = 17; i< 57; i++) {
+                UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"640_%d",i]];
+                if (image) {// 有图片
+                    [array addObject:image];
+                }
+            }
+        }
+        _imageArray = array;
+    }
+    return _imageArray;
+}
+/**
+ *  初始化
+ *
+ */
+- (instancetype)init
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    // cell的尺寸
+    CGFloat itemW = [UIScreen mainScreen].bounds.size.width * 0.246;
+    CGFloat itemH = itemW * 184 / 239  ;
+    
+    layout.itemSize = CGSizeMake(itemW , itemH);
+    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 2;
+    // 设置cell与CollectionView边缘的间距
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    return [super initWithCollectionViewLayout:layout];
+}
+#pragma mark- lifeCycle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    // 删除原有的 解决闪现出其他标题
+    self.navigationController.navigationItem.titleView = nil;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // 设置导航栏按钮
     [self setupNavBarButton];
-    // Register cell classes
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    self.view.backgroundColor = [UIColor grayColor];
-}
-/**
- *  设置导航栏按钮
- */
-- (void)setupNavBarButton
-{
-    // 左边按钮(自定义)
-    GFSButton *leftButton = [[GFSButton alloc]init];
-    leftButton.frame = CGRectMake(0, 0, 40, 40);
-//    leftButton.backgroundColor = [UIColor grayColor];
-    [leftButton setTitle:@"广州" forState:UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [leftButton addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
-    // 中间搜索
-    UISearchBar *centerSearcher = [[UISearchBar alloc]init];
-    // 图标
-    centerSearcher.placeholder = @"搜索你想要的";
-    centerSearcher.contentMode = UIViewContentModeLeft;
-    // 位置和尺寸
-    centerSearcher.frame = CGRectMake(0, 0, 80, 40);
-    
-    self.navigationItem.titleView = centerSearcher;
-    self.centerSearcher = centerSearcher;
-    
+    [self setupBaseView];
 }
-/**
- *  定位地址点击事件
- *
- *  @param button 按钮
- */
-- (void)leftButtonClicked:(GFSButton *)button
-{
-    UIViewController *cities = [[GFSCitiesViewController alloc]init];
-    
-    [self.navigationController pushViewController:cities animated:YES];
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - UISearchBarDelegate
 /** 搜索框结束编辑（退出键盘） */
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
@@ -109,56 +123,97 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
+#pragma mark <UICollectionViewDataSource><UICollectionViewDelegate>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    
+//    GFSLog(@"---tupian%ld",self.imageArray.count);
+    return self.imageArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    GFSHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"bottomcell" forIndexPath:indexPath];
+    
+    cell.image = self.imageArray[indexPath.row];
     
     return cell;
 }
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
+     
+#pragma mark- setterAndGetter
+/**
+*  初始化地址
 */
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+- (NSString *)cityButtonTitle
+{
+    // 取出当前标题
+    _cityButtonTitle = GFSShowCityBtn.currentTitle;
+    
+    if (!_cityButtonTitle) {
+        // 如果没有  设置默认标题
+        _cityButtonTitle = @"广州";
+    }
+    return _cityButtonTitle;
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+#pragma mark- pravitMethods
+/**
+ *  设置控制器view属性
+ */
+- (void)setupBaseView
+{
+    // 垂直方向上永远有弹簧效果
+    self.collectionView.alwaysBounceVertical = YES;
+    
+    self.view.backgroundColor = [UIColor grayColor];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"GFSHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"bottomcell"];
+}
+/**
+ *  设置导航栏按钮
+ */
+- (void)setupNavBarButton
+{
+    // 左边按钮(自定义)
+    UIButton *leftButton = GFSShowCityBtn;
+    
+    //    leftButton.backgroundColor = [UIColor grayColor];
+    [leftButton setTitle:self.cityButtonTitle forState:UIControlStateNormal];
+    leftButton.titleLabel.font = GFSCityFont;
+    //    leftButton.contentEdgeInsets = UIEdgeInsetsMake(2, 4, 2, 0);
+    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    CGSize btnSize = [self.cityButtonTitle sizeWithAttributes:[NSDictionary dictionaryWithObject:GFSCityFont forKey:NSFontAttributeName]];
+    leftButton.frame = CGRectMake(0, 0, btnSize.width, 40);
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    
+    
+    // 中间搜索
+    UISearchBar *centerSearcher = [[UISearchBar alloc]init];
+    // 图标
+    centerSearcher.placeholder = @"搜索你想要的";
+    centerSearcher.contentMode = UIViewContentModeLeft;
+    // 位置和尺寸
+    centerSearcher.frame = CGRectMake(0, 0, 60, 40);
+    
+    self.navigationItem.titleView = centerSearcher;
+    self.centerSearcher = centerSearcher;
+    
+}
+/**
+ *  定位地址点击事件
+ *
+ *  @param button 按钮
+ */
+- (void)leftButtonClicked:(GFSShowCityButton *)button
+{
+    UIViewController *cities = [[GFSCitiesViewController alloc]init];
+    
+    [self.navigationController pushViewController:cities animated:YES];
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

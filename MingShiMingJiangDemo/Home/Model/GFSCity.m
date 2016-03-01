@@ -7,6 +7,7 @@
 //
 
 #import "GFSCity.h"
+#import "NSString+GFS.h"
 #import "ChineseToPinyin.h"
 @implementation GFSCity
 
@@ -14,6 +15,7 @@
 {
     _name = name;
     _pinyin = [ChineseToPinyin pinyinFromChiniseString:name];
+//    _pinyin = [NSString pinYinStringFromChinese:name];
 }
 + (instancetype)city
 {

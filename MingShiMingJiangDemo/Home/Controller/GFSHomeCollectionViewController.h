@@ -7,6 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GFSHomeCollectionViewController : UIViewController
+#import "GFSCollectionViewController.h"
+@interface GFSHomeCollectionViewController :UICollectionViewController  
 @end

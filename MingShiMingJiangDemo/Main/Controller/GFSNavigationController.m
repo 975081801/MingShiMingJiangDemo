@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,12 +29,10 @@
  */
 + (void)initialize
 {
-    
     // 1.设置导航栏主题
     [self setupNavBarTheme];
     // 2.设置导航栏按钮主题；
     [self setupNavBarButtonTheme];
-    
 }
 + (void)setupNavBarButtonTheme
 {
@@ -60,6 +58,13 @@
 {
     // 取出当前的navBar对象
     UINavigationBar *navBar = [UINavigationBar appearance];
+    navBar.tintColor = [UIColor blackColor];
+    // 设置透明
+//    navBar.alpha = 1;
+    [navBar setTranslucent:YES];
+//    [navBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+//    [navBar setShadowImage:[[UIImage alloc]init] ];
+//    navBar.backgroundColor = [UIColor clearColor];
     // 设置标题属性
     NSMutableDictionary *textAttrs = [[NSMutableDictionary alloc]init];
     textAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
