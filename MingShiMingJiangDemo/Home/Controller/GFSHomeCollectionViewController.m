@@ -133,7 +133,10 @@ static NSString * const ID = @"bottomcell";
     // 弹出搜索界面
     
 }
-
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.centerSearcher endEditing:YES];
+}
 #pragma mark <UICollectionViewDataSource><UICollectionViewDelegate>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

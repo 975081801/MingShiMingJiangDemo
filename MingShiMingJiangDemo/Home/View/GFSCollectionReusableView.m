@@ -47,26 +47,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        // cell的尺寸
-        CGFloat itemW = [UIScreen mainScreen].bounds.size.width * 0.25;
-        CGFloat itemH = itemW * 233 / 239  ;
-        
-        
-        layout.itemSize = CGSizeMake(itemW , itemH);
-        layout.minimumInteritemSpacing = 0;
-        layout.minimumLineSpacing = 0;
-        // 设置cell与CollectionView边缘的间距
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 2 *itemH);
-        UICollectionView *headerView = [[UICollectionView alloc]initWithFrame: frame collectionViewLayout:layout];
-        [headerView registerNib:[UINib nibWithNibName:@"GFSHomeHeaderCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"headercell"];
-        headerView.dataSource = self;
-        headerView.delegate = self;
-        
-        [self addSubview:headerView];
-        self.headerView = headerView;
-        self.height = 2 *itemH +10;
+        [self setUp];
         
     }
     return self;
@@ -91,5 +72,29 @@
     
     _headerView.frame = self.bounds;
     
+}
+- (void)setUp
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    // cell的尺寸
+    CGFloat itemW = [UIScreen mainScreen].bounds.size.width * 0.25;
+    CGFloat itemH = itemW * 233 / 239  ;
+    
+    
+    layout.itemSize = CGSizeMake(itemW , itemH);
+    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 0;
+    // 设置cell与CollectionView边缘的间距
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 2 *itemH);
+    UICollectionView *headerView = [[UICollectionView alloc]initWithFrame: frame collectionViewLayout:layout];
+    [headerView registerNib:[UINib nibWithNibName:@"GFSHomeHeaderCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"headercell"];
+    headerView.dataSource = self;
+    headerView.delegate = self;
+    headerView.backgroundColor = [UIColor grayColor];
+    
+    [self addSubview:headerView];
+    self.headerView = headerView;
+    self.height = 2 *itemH +10;
 }
 @end
