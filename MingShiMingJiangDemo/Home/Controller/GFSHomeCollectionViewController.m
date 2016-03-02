@@ -11,12 +11,24 @@
 #import "GFSHomeCollectionViewCell.h"
 #import "GFSCollectionReusableView.h"
 #import "GFSLocateTool.h"
+#import "GFSSearchViewController.h"
 @interface GFSHomeCollectionViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate,GFSCollectionReusableViewDelegate>
 @property(nonatomic,weak)UISearchBar *centerSearcher;
-
+/**
+ *  首页位置显示的城市
+ */
 @property(nonatomic,copy)NSString *cityButtonTitle;
-
+/**
+ *  所有合适的图片
+ */
 @property(nonatomic,strong)NSArray *imageArray;
+/**
+ *  所有模块标题
+ */
+@property(nonatomic,strong)NSArray *types;
+/**
+ *  表头view  注意reuse  设置代理应该在复用位置设置
+ */
 @property(nonatomic,strong)GFSCollectionReusableView *headerView;
 @end
 
@@ -32,6 +44,14 @@ static NSString * const ID = @"bottomcell";
         _headerView = headerView;
     }
     return _headerView;
+}
+- (NSArray *)types
+{
+    if (!_types) {
+        NSArray *array = @[@"装修队长",@"泥水工",@"水电工",@"木工",@"油漆工",@"工程监理",@"家具安装",@"木地板安装",@"石材加工安装",@"电焊工",@"玻璃加工安装",@"壁纸窗帘",@"门窗定制安装",@"广告招牌",@"护栏铁艺",@"电器维修安装",@"疏通补漏",@"打孔钻孔",@"拆除工",@"搬运工"];
+        _types = array;
+    }
+    return _types;
 }
 - (NSArray *)imageArray
 {
@@ -141,7 +161,9 @@ static NSString * const ID = @"bottomcell";
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     // 弹出搜索界面
-    
+    GFSSearchViewController *seachVc = [[GFSSearchViewController alloc]init];
+    seachVc.title = @"搜索";
+    [self.navigationController pushViewController:seachVc animated:YES];
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
@@ -165,7 +187,8 @@ static NSString * const ID = @"bottomcell";
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"---------");
+    NSString *type = self.types[indexPath.row];
+    NSLog(@"-----%@----",type);
 }
 /**
  *  添加headerView
@@ -181,7 +204,7 @@ static NSString * const ID = @"bottomcell";
 #pragma mark- GFSCollectionReusableViewDelegate
 - (void)headerView:(GFSCollectionReusableView *)headerView clicked:(NSString *)partType
 {
-    GFSLog(@"%@",partType);
+    GFSLog(@"--%@---",partType);
 }
 #pragma mark- setterAndGetter
 /**
@@ -303,7 +326,7 @@ static NSString * const ID = @"bottomcell";
     centerSearcher.contentMode = UIViewContentModeLeft;
     // 位置和尺寸
     centerSearcher.frame = CGRectMake(0, 0, 60, 40);
-    
+    centerSearcher.delegate = self;
     self.navigationItem.titleView = centerSearcher;
     self.centerSearcher = centerSearcher;
     

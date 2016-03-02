@@ -7,7 +7,7 @@
 //
 
 #import "GFSTableViewController.h"
-
+#import "MJRefresh.h"
 @interface GFSTableViewController ()
 
 @end
@@ -17,13 +17,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    // 集成刷新控件
+    [self setupRefreshView];
 }
-
+/**
+ *  添加刷新控件
+ */
+- (void)setupRefreshView
+{
+    // 下拉刷新
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+#warning 自动刷新(一进入程序就下拉刷新)
+    [self.tableView.mj_header beginRefreshing];
+    // 上啦刷新
+    self.tableView.mj_footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+//    self.tableView.mj_headerPullToRefreshText = @"下拉可以刷新了";
+//    self.tableView.headerReleaseToRefreshText = @"松开马上刷新了";
+//    self.tableView.headerRefreshingText = @"管哥正在帮你刷新中,不客气";
+//    [self.tableView.mj_header setTitle:@"Pull down to refresh" forState:MJRefreshStateIdle];
+//    [header setTitle:@"Release to refresh" forState:MJRefreshStatePulling];
+//    [header setTitle:@"Loading ..." forState:MJRefreshStateRefreshing];
+//    self.tableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+//    self.tableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+//    self.tableView.footerRefreshingText = @"管哥正在帮你加载中,不客气";
+    
+}
+/**
+ *  可在此方法内进行下拉刷新动作  子类可覆盖此方法
+ */
+- (void)loadNewData
+{
+    // 一般要进行请求参数对比 加载最新的
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_header endRefreshing];
+    });
+}
+/**
+ *  可在此方法内进行上拉加载动作  子类可覆盖此方法
+ */
+- (void)loadMoreData
+{
+    // 一般要进行请求参数对比 加载最新的
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_footer endRefreshing];
+    });
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
