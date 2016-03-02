@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 集成刷新控件
     [self setupRefreshView];
 }
@@ -27,21 +28,16 @@
 - (void)setupRefreshView
 {
     // 下拉刷新
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    [header setTitle:@"下拉可以刷新了" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开马上刷新了" forState:MJRefreshStatePulling];
+    [header setTitle:@"管哥正在帮你刷新中,不客气" forState:MJRefreshStateRefreshing];
+    self.tableView.mj_header = header;
 #warning 自动刷新(一进入程序就下拉刷新)
     [self.tableView.mj_header beginRefreshing];
     // 上啦刷新
     self.tableView.mj_footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
-//    self.tableView.mj_headerPullToRefreshText = @"下拉可以刷新了";
-//    self.tableView.headerReleaseToRefreshText = @"松开马上刷新了";
-//    self.tableView.headerRefreshingText = @"管哥正在帮你刷新中,不客气";
-//    [self.tableView.mj_header setTitle:@"Pull down to refresh" forState:MJRefreshStateIdle];
-//    [header setTitle:@"Release to refresh" forState:MJRefreshStatePulling];
-//    [header setTitle:@"Loading ..." forState:MJRefreshStateRefreshing];
-//    self.tableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
-//    self.tableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
-//    self.tableView.footerRefreshingText = @"管哥正在帮你加载中,不客气";
     
 }
 /**

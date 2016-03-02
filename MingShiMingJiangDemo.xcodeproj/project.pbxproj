@@ -15,6 +15,9 @@
 		EE16CFC31C861E5400636C13 /* GFSCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE16CFC21C861E5400636C13 /* GFSCollectionReusableView.m */; };
 		EE1EDCE71C8726150020E605 /* GFSSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1EDCE61C8726150020E605 /* GFSSearchViewController.m */; };
 		EE6D2B0B1C8528D200CDB817 /* GFSShowCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6D2B0A1C8528D200CDB817 /* GFSShowCityButton.m */; };
+		EEEBD7031C87454400B23F53 /* GFSDesignerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEBD7021C87454400B23F53 /* GFSDesignerViewController.m */; };
+		EEEBD7061C87455D00B23F53 /* GFSHandlerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEBD7051C87455D00B23F53 /* GFSHandlerViewController.m */; };
+		EEEBD7091C87495800B23F53 /* GFSWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEBD7081C87495800B23F53 /* GFSWorker.m */; };
 		EEF34CC51C841A0B00E058CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34CC41C841A0B00E058CC /* main.m */; };
 		EEF34CD31C841A0B00E058CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF34CD11C841A0B00E058CC /* LaunchScreen.storyboard */; };
 		EEF34CDE1C841A0B00E058CC /* MingShiMingJiangDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF34CDD1C841A0B00E058CC /* MingShiMingJiangDemoTests.m */; };
@@ -96,6 +99,12 @@
 		EE1EDCE61C8726150020E605 /* GFSSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSSearchViewController.m; sourceTree = "<group>"; };
 		EE6D2B091C8528D200CDB817 /* GFSShowCityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GFSShowCityButton.h; path = ../../Home/View/GFSShowCityButton.h; sourceTree = "<group>"; };
 		EE6D2B0A1C8528D200CDB817 /* GFSShowCityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GFSShowCityButton.m; path = ../../Home/View/GFSShowCityButton.m; sourceTree = "<group>"; };
+		EEEBD7011C87454400B23F53 /* GFSDesignerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSDesignerViewController.h; sourceTree = "<group>"; };
+		EEEBD7021C87454400B23F53 /* GFSDesignerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSDesignerViewController.m; sourceTree = "<group>"; };
+		EEEBD7041C87455D00B23F53 /* GFSHandlerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSHandlerViewController.h; sourceTree = "<group>"; };
+		EEEBD7051C87455D00B23F53 /* GFSHandlerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSHandlerViewController.m; sourceTree = "<group>"; };
+		EEEBD7071C87495800B23F53 /* GFSWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSWorker.h; sourceTree = "<group>"; };
+		EEEBD7081C87495800B23F53 /* GFSWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSWorker.m; sourceTree = "<group>"; };
 		EEF34CC01C841A0B00E058CC /* MingShiMingJiangDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MingShiMingJiangDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF34CC41C841A0B00E058CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EEF34CD21C841A0B00E058CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -219,6 +228,13 @@
 				EE16CFBE1C8610B800636C13 /* GFSHomeHeaderCollectionViewCell.xib */,
 			);
 			name = CollectionCell;
+			sourceTree = "<group>";
+		};
+		EEEBD70A1C874AB300B23F53 /* TableViewCellAndHeader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TableViewCellAndHeader;
 			sourceTree = "<group>";
 		};
 		EEF34CB71C841A0A00E058CC = {
@@ -393,6 +409,10 @@
 				EEF34D481C843D1700E058CC /* GFSCitiesViewController.m */,
 				EE1EDCE51C8726150020E605 /* GFSSearchViewController.h */,
 				EE1EDCE61C8726150020E605 /* GFSSearchViewController.m */,
+				EEEBD7011C87454400B23F53 /* GFSDesignerViewController.h */,
+				EEEBD7021C87454400B23F53 /* GFSDesignerViewController.m */,
+				EEEBD7041C87455D00B23F53 /* GFSHandlerViewController.h */,
+				EEEBD7051C87455D00B23F53 /* GFSHandlerViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -402,6 +422,8 @@
 			children = (
 				EEF34D5B1C845E2800E058CC /* GFSCity.h */,
 				EEF34D5C1C845E2800E058CC /* GFSCity.m */,
+				EEEBD7071C87495800B23F53 /* GFSWorker.h */,
+				EEEBD7081C87495800B23F53 /* GFSWorker.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,6 +431,7 @@
 		EEF34D041C841C1E00E058CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EEEBD70A1C874AB300B23F53 /* TableViewCellAndHeader */,
 				EEEBD7001C872E9900B23F53 /* CollectionCell */,
 				EE16CFA91C85E67400636C13 /* LBS */,
 			);
@@ -689,6 +712,7 @@
 				EE6D2B0B1C8528D200CDB817 /* GFSShowCityButton.m in Sources */,
 				EEF34D5D1C845E2800E058CC /* GFSCity.m in Sources */,
 				EEF34D681C84881300E058CC /* GFSAreaLocationView.m in Sources */,
+				EEEBD7091C87495800B23F53 /* GFSWorker.m in Sources */,
 				EE16CFBF1C8610B800636C13 /* GFSHomeHeaderCollectionViewCell.m in Sources */,
 				EEF34D3D1C842C4C00E058CC /* UIImage+GFS.m in Sources */,
 				EEF34D291C842AB500E058CC /* GFSHomeCollectionViewController.m in Sources */,
@@ -699,10 +723,12 @@
 				EE16CFC31C861E5400636C13 /* GFSCollectionReusableView.m in Sources */,
 				EEF34D711C84B9D200E058CC /* GFSLocateTool.m in Sources */,
 				EEF34D1D1C8428CC00E058CC /* GFSCollectionViewController.m in Sources */,
+				EEEBD7061C87455D00B23F53 /* GFSHandlerViewController.m in Sources */,
 				EEF34D491C843D1700E058CC /* GFSCitiesViewController.m in Sources */,
 				EEF34D211C8428E600E058CC /* GFSTableViewController.m in Sources */,
 				EEF34CC51C841A0B00E058CC /* main.m in Sources */,
 				EE1EDCE71C8726150020E605 /* GFSSearchViewController.m in Sources */,
+				EEEBD7031C87454400B23F53 /* GFSDesignerViewController.m in Sources */,
 				EEF34D251C84290100E058CC /* GFSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

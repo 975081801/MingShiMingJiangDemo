@@ -11,6 +11,10 @@
 
 #import "UIImage+GFS.h"
 
+// 0 第三方autolayout
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
 // 1 判断是否为iOS7以上
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 // 2 设置颜色

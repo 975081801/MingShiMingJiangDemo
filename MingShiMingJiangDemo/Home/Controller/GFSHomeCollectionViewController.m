@@ -12,6 +12,10 @@
 #import "GFSCollectionReusableView.h"
 #import "GFSLocateTool.h"
 #import "GFSSearchViewController.h"
+#import "GFSHandlerViewController.h"
+#import "GFSDesignerViewController.h"
+
+
 @interface GFSHomeCollectionViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate,GFSCollectionReusableViewDelegate>
 @property(nonatomic,weak)UISearchBar *centerSearcher;
 /**
@@ -188,7 +192,11 @@ static NSString * const ID = @"bottomcell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *type = self.types[indexPath.row];
-    NSLog(@"-----%@----",type);
+    
+    GFSHandlerViewController *handVC = [[GFSHandlerViewController alloc]init];
+    handVC.title = type;
+    
+    [self.navigationController pushViewController:handVC animated:YES];
 }
 /**
  *  添加headerView
@@ -204,7 +212,12 @@ static NSString * const ID = @"bottomcell";
 #pragma mark- GFSCollectionReusableViewDelegate
 - (void)headerView:(GFSCollectionReusableView *)headerView clicked:(NSString *)partType
 {
-    GFSLog(@"--%@---",partType);
+    // 点击表头cell时  跳转设计类表格View
+    GFSDesignerViewController *desigerTypeVc = [[GFSDesignerViewController alloc]init];
+    
+    desigerTypeVc.title = partType;
+    
+    [self.navigationController pushViewController:desigerTypeVc animated:YES];
 }
 #pragma mark- setterAndGetter
 /**
