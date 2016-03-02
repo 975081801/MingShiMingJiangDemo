@@ -9,18 +9,21 @@
 #import "GFSHomeCollectionViewController.h"
 #import "GFSCitiesViewController.h"
 #import "GFSHomeCollectionViewCell.h"
+#import "GFSCollectionReusableView.h"
 @interface GFSHomeCollectionViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,weak)UISearchBar *centerSearcher;
 
 @property(nonatomic,copy)NSString *cityButtonTitle;
 
 @property(nonatomic,strong)NSArray *imageArray;
+@property(nonatomic,strong)GFSCollectionReusableView *headerView;
 @end
 
 @implementation GFSHomeCollectionViewController
 
 static NSString * const ID = @"bottomcell";
 #pragma mark- 初始化和懒加载
+
 - (NSArray *)imageArray
 {
     if (!_imageArray) {
@@ -62,8 +65,16 @@ static NSString * const ID = @"bottomcell";
     layout.itemSize = CGSizeMake(itemW , itemH);
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 2;
+    GFSCollectionReusableView *headerView = [[GFSCollectionReusableView alloc]init];
+    self.headerView = headerView;
+    
+//    CGFloat headerViewH = [UIScreen mainScreen].bounds.size.height - 5*itemH - 120;
+    layout.headerReferenceSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, self.headerView.height);
+    //是否固定表头
+//    layout.sectionHeadersPinToVisibleBounds = YES;
     // 设置cell与CollectionView边缘的间距
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+
     return [super initWithCollectionViewLayout:layout];
 }
 #pragma mark- lifeCycle
@@ -139,7 +150,17 @@ static NSString * const ID = @"bottomcell";
     
     return cell;
 }
-     
+/**
+ *  添加headerView
+ *
+ */
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    
+        GFSCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"reuse" forIndexPath:indexPath ];
+    
+    return headerView;
+}
 #pragma mark- setterAndGetter
 /**
 *  初始化地址
@@ -165,8 +186,13 @@ static NSString * const ID = @"bottomcell";
     // 垂直方向上永远有弹簧效果
     self.collectionView.alwaysBounceVertical = YES;
     
-    self.view.backgroundColor = [UIColor grayColor];
+//    self.collectionView.bounces = NO;
+    self.collectionView.backgroundColor = [UIColor grayColor];
+    self.collectionView.showsVerticalScrollIndicator = NO;
+    
     [self.collectionView registerNib:[UINib nibWithNibName:@"GFSHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"bottomcell"];
+    
+    [self.collectionView registerClass:[GFSCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"reuse"];
 }
 /**
  *  设置导航栏按钮

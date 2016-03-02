@@ -42,6 +42,8 @@
 {
     [super viewDidLoad];
     
+    self.tableView.sectionIndexColor = [UIColor whiteColor];
+    self.tableView.sectionIndexBackgroundColor = [UIColor grayColor];
     [self setupHeaderView];
 //    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
 }
