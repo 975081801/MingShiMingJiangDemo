@@ -19,7 +19,7 @@
 /**
  *  所有城市拼音分组
  */
-@property(nonatomic,strong)NSMutableArray *cityPinyinSort;
+@property(nonatomic,strong)NSArray *cityPinyinSort;
 /**
  *  所有城市与首字母的键值对
  */
@@ -103,10 +103,7 @@
     NSMutableArray *array=[_cityDicts objectForKey:[_cityPinyinSort objectAtIndex:section]];
     
 //    [GFSShowCityBtn setTitle:[array objectAtIndex:row] forState:UIControlStateNormal];
-    GFSShowCityBtn.cityName = [array objectAtIndex:row];
-//    [[NSUserDefaults  standardUserDefaults]setObject:[array objectAtIndex:row] forKey:@"city"];
-//    
-//    [[NSUserDefaults  standardUserDefaults]synchronize];
+    GFSShowCityBtn.cityName = [array objectAtIndex:row];  
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -174,7 +171,9 @@
         // 定位成功
         GFSLog(@"%@",address);
         NSString *cityName = [address substringToIndex:address.length-1];
-        [GFSShowCityBtn setTitle:cityName forState:UIControlStateNormal];
+//        [GFSShowCityBtn setTitle:cityName forState:UIControlStateNormal];
+        GFSShowCityBtn.cityName = cityName;
+        
         [self.navigationController popToRootViewControllerAnimated:YES];
     } failure:^{
         // 失败
@@ -184,7 +183,7 @@
 
 - (void)hotCityClicked:(GFSCityViewHeaderView *)headerView city:(NSString *)cityName
 {
-    [GFSShowCityBtn setTitle:cityName forState:UIControlStateNormal];
+    GFSShowCityBtn.cityName = cityName;
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -207,7 +206,7 @@
     }
     return _cities;
 }
-- (NSMutableArray *)cityPinyinSort
+- (NSArray *)cityPinyinSort
 {
     if (!_cityPinyinSort) {
         // 用来储存对应分组的字典

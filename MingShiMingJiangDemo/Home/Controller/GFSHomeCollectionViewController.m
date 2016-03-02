@@ -10,7 +10,8 @@
 #import "GFSCitiesViewController.h"
 #import "GFSHomeCollectionViewCell.h"
 #import "GFSCollectionReusableView.h"
-@interface GFSHomeCollectionViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+#import "GFSLocateTool.h"
+@interface GFSHomeCollectionViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate,GFSCollectionReusableViewDelegate>
 @property(nonatomic,weak)UISearchBar *centerSearcher;
 
 @property(nonatomic,copy)NSString *cityButtonTitle;
@@ -23,7 +24,15 @@
 
 static NSString * const ID = @"bottomcell";
 #pragma mark- 初始化和懒加载
-
+- (GFSCollectionReusableView *)headerView
+{
+    if (!_headerView) {
+        
+        GFSCollectionReusableView *headerView = [[GFSCollectionReusableView alloc]init];
+        _headerView = headerView;
+    }
+    return _headerView;
+}
 - (NSArray *)imageArray
 {
     if (!_imageArray) {
@@ -65,10 +74,6 @@ static NSString * const ID = @"bottomcell";
     layout.itemSize = CGSizeMake(itemW , itemH);
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 2;
-    GFSCollectionReusableView *headerView = [[GFSCollectionReusableView alloc]init];
-    self.headerView = headerView;
-    
-//    CGFloat headerViewH = [UIScreen mainScreen].bounds.size.height - 5*itemH - 120;
     layout.headerReferenceSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, self.headerView.height);
     //是否固定表头
 //    layout.sectionHeadersPinToVisibleBounds = YES;
@@ -84,7 +89,7 @@ static NSString * const ID = @"bottomcell";
     // 删除原有的 解决闪现出其他标题
 //    self.navigationController.navigationItem.titleView = nil;
     
-    CGSize btnSize = [self.cityButtonTitle sizeWithAttributes:[NSDictionary dictionaryWithObject:GFSCityFont forKey:NSFontAttributeName]];
+    CGSize btnSize = [GFSShowCityBtn.currentTitle sizeWithAttributes:[NSDictionary dictionaryWithObject:GFSCityFont forKey:NSFontAttributeName]];
 //        GFSLog(@"----%f",btnSize.width);
     GFSShowCityBtn.frame = CGRectMake(0, 0, btnSize.width, 40);
 }
@@ -93,8 +98,10 @@ static NSString * const ID = @"bottomcell";
     
     // 设置导航栏按钮
     [self setupNavBarButton];
-    
+    // 设置基础视图
     [self setupBaseView];
+    // 检测当前位置
+    [self checkCity];
 }
 #pragma mark - UISearchBarDelegate
 /** 搜索框结束编辑（退出键盘） */
@@ -156,6 +163,10 @@ static NSString * const ID = @"bottomcell";
     
     return cell;
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"---------");
+}
 /**
  *  添加headerView
  *
@@ -164,8 +175,13 @@ static NSString * const ID = @"bottomcell";
 {
     
         GFSCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"reuse" forIndexPath:indexPath ];
-    
+    headerView.delegate = self;
     return headerView;
+}
+#pragma mark- GFSCollectionReusableViewDelegate
+- (void)headerView:(GFSCollectionReusableView *)headerView clicked:(NSString *)partType
+{
+    GFSLog(@"%@",partType);
 }
 #pragma mark- setterAndGetter
 /**
@@ -173,8 +189,9 @@ static NSString * const ID = @"bottomcell";
 */
 - (NSString *)cityButtonTitle
 {
-    // 取出当前标题
-    _cityButtonTitle = GFSShowCityBtn.currentTitle;
+    // 取出当前保存的城市(之前使用过)
+    NSString *cityName = [[NSUserDefaults standardUserDefaults]objectForKey:@"city"];
+    _cityButtonTitle = cityName;
     
     if (!_cityButtonTitle) {
         // 如果没有  设置默认标题
@@ -184,6 +201,67 @@ static NSString * const ID = @"bottomcell";
 }
 
 #pragma mark- pravitMethods
+/**
+ *  检测当前城市
+ */
+- (void)checkCity
+{
+    GFSLocateTool *location =  [GFSLocateTool sharedGFSLocateTool];
+    [GFSLocateTool startLocation];
+    if (location.isUnAuthorization) {// 未授权 提示授权
+        [self alertOpenLocationSwitch];
+    }
+    [location reverseGeocodeWithlatitude:location.latitude longitude:location.longitude success:^(NSString *address) {
+        // 定位成功
+        
+        NSString *cityName = [address substringToIndex:address.length-1];
+        GFSLog(@"-----%@",cityName);
+        if (![GFSShowCityBtn.cityName isEqualToString:cityName]) {
+            [self alertToChangeCity:cityName];
+        }
+        
+    } failure:^{
+        // 失败
+//        [self alertOpenLocationFailure];
+    }];
+
+}
+/**
+ *  提醒切换城市
+ */
+- (void)alertToChangeCity:(NSString *)cityName
+{
+    
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"您当前位置与实际不符是否切换到%@",cityName] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        GFSShowCityBtn.cityName = cityName;
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
+    
+    [alertView addAction:cancelAction];
+    [alertView addAction:okAction];
+    
+    [self presentViewController:alertView animated:YES completion:nil];
+  
+}
+/**
+ *  提示打开定位
+ */
+- (void)alertOpenLocationSwitch
+{
+    
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请在隐私设置中打开定位开关" preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+    
+//    [alertView addAction:cancelAction];
+    [alertView addAction:okAction];
+    
+    [self presentViewController:alertView animated:YES completion:nil];}
+
 /**
  *  设置控制器view属性
  */
@@ -196,6 +274,7 @@ static NSString * const ID = @"bottomcell";
 //    self.collectionView.bounces = NO;
     self.collectionView.backgroundColor = [UIColor grayColor];
     self.collectionView.showsVerticalScrollIndicator = NO;
+    
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"GFSHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"bottomcell"];
     

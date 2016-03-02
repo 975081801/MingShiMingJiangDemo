@@ -86,10 +86,9 @@ Singleton_m(GFSLocateTool)
     
     CLLocation *loc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
     [self.geocoder reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error) {
-        CLPlacemark *pm = [placemarks firstObject];
-        GFSLog(@"%@",pm.locality);
+
         if (error) {
-            GFSLog(@"%@",error.description);
+//            GFSLog(@"%@",error.description);
             if (failure) {
                 failure();
             }

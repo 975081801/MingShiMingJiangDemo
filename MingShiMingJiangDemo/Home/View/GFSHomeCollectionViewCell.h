@@ -10,4 +10,8 @@
 
 @interface GFSHomeCollectionViewCell : UICollectionViewCell
 @property(nonatomic,strong)UIImage *image;
+/**
+ *  模块类型
+ */
+@property(nonatomic,copy)NSString *type;
 @end

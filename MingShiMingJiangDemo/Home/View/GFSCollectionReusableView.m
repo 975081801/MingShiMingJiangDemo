@@ -12,8 +12,10 @@
 @interface GFSCollectionReusableView()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)NSArray *images;
 @property(nonatomic,weak)UICollectionView *headerView;
+@property(nonatomic,strong)NSArray *types;
 @end
 @implementation GFSCollectionReusableView
+#pragma mark- 初始化  懒加载
 - (NSArray *)images
 {
     if (!_images) {
@@ -43,6 +45,15 @@
     }
     return _images;
 }
+- (NSArray *)types
+{
+    if (!_types) {
+        NSArray *array = @[@"室内设计",@"效果图",@"施工图",@"预算师",@"3D建模",@"机电设计",@"软装设计",@"园林设计"];
+        
+        _types = array;
+    }
+    return _types;
+}
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
@@ -52,6 +63,15 @@
     }
     return self;
 }
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    _headerView.frame = self.bounds;
+    
+}
+
+#pragma mark- UICollectionViewDataSource 和 代理方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     //    GFSLog(@"---tupian%ld",self.imageArray.count);
@@ -63,16 +83,21 @@
     GFSHomeHeaderCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"headercell" forIndexPath:indexPath];
     
     cell.image = self.images[indexPath.row];
-    
+    cell.type = self.types[indexPath.row];
     return cell;
 }
-- (void)layoutSubviews
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super layoutSubviews];
-    
-    _headerView.frame = self.bounds;
-    
+    NSString *type = self.types[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(headerView:clicked:)]) {
+        // 将点击到的按钮代表的类型传给代理
+        [self.delegate headerView:self clicked:type];
+    }
 }
+#pragma mark- 私有方法
+/**
+ *  基础设置
+ */
 - (void)setUp
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
