@@ -10,4 +10,5 @@
 #import "Singleton.h"
 @interface GFSShowCityButton : UIButton
 Singleton_h(GFSShowCityButton)
+@property(nonatomic,copy)NSString *cityName;
 @end

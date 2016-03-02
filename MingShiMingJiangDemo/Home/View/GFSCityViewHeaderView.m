@@ -42,7 +42,7 @@
         self.userInteractionEnabled = YES;
         // 定位View
         GFSAreaLocationView *areaView = [GFSAreaLocationView areaLocationView];
-        areaView.selectCity = GFSShowCityBtn.currentTitle;
+        areaView.selectCity = GFSShowCityBtn.cityName;
         [self addSubview:areaView];
         self.areaView = areaView;
         

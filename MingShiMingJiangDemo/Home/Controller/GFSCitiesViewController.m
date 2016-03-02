@@ -102,9 +102,8 @@
     NSUInteger row = [indexPath row];
     NSMutableArray *array=[_cityDicts objectForKey:[_cityPinyinSort objectAtIndex:section]];
     
-    GFSLog(@"%@",[array objectAtIndex:row]);
-    
-    [GFSShowCityBtn setTitle:[array objectAtIndex:row] forState:UIControlStateNormal];
+//    [GFSShowCityBtn setTitle:[array objectAtIndex:row] forState:UIControlStateNormal];
+    GFSShowCityBtn.cityName = [array objectAtIndex:row];
 //    [[NSUserDefaults  standardUserDefaults]setObject:[array objectAtIndex:row] forKey:@"city"];
 //    
 //    [[NSUserDefaults  standardUserDefaults]synchronize];
@@ -147,7 +146,7 @@
  */
 - (void)alertOpenLocationFailure
 {
-    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"定位失败请重试" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"定位失败请稍等或者重试" preferredStyle:UIAlertControllerStyleAlert];
 //    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
 //    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 //        // 重新定位
@@ -172,10 +171,10 @@
         [self alertOpenLocationSwitch];
     }
     [location reverseGeocodeWithlatitude:location.latitude longitude:location.longitude success:^(NSString *address) {
-        
         // 定位成功
         GFSLog(@"%@",address);
-        [GFSShowCityBtn setTitle:address forState:UIControlStateNormal];
+        NSString *cityName = [address substringToIndex:address.length-1];
+        [GFSShowCityBtn setTitle:cityName forState:UIControlStateNormal];
         [self.navigationController popToRootViewControllerAnimated:YES];
     } failure:^{
         // 失败

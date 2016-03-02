@@ -38,7 +38,7 @@
         self.backgroundColor = [UIColor whiteColor];
         // 添加cityLabel
         UILabel *cityLabel = [[UILabel alloc]init];
-        cityLabel.text = GFSShowCityBtn.currentTitle;
+        cityLabel.text = GFSShowCityBtn.cityName;
         cityLabel.textColor = [UIColor blackColor];
         cityLabel.font = GFSCityFont;
         [self addSubview:cityLabel];

@@ -7,7 +7,6 @@
 //
 
 #import "GFSCity.h"
-#import "NSString+GFS.h"
 #import "ChineseToPinyin.h"
 @implementation GFSCity
 

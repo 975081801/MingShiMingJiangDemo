@@ -82,8 +82,11 @@ static NSString * const ID = @"bottomcell";
 {
     [super viewWillAppear:YES];
     // 删除原有的 解决闪现出其他标题
-    self.navigationController.navigationItem.titleView = nil;
+//    self.navigationController.navigationItem.titleView = nil;
     
+    CGSize btnSize = [self.cityButtonTitle sizeWithAttributes:[NSDictionary dictionaryWithObject:GFSCityFont forKey:NSFontAttributeName]];
+//        GFSLog(@"----%f",btnSize.width);
+    GFSShowCityBtn.frame = CGRectMake(0, 0, btnSize.width, 40);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -186,6 +189,7 @@ static NSString * const ID = @"bottomcell";
  */
 - (void)setupBaseView
 {
+    self.title = nil;
     // 垂直方向上永远有弹簧效果
     self.collectionView.alwaysBounceVertical = YES;
     
@@ -203,17 +207,14 @@ static NSString * const ID = @"bottomcell";
 - (void)setupNavBarButton
 {
     // 左边按钮(自定义)
-    UIButton *leftButton = GFSShowCityBtn;
     
-    //    leftButton.backgroundColor = [UIColor grayColor];
-    [leftButton setTitle:self.cityButtonTitle forState:UIControlStateNormal];
-    leftButton.titleLabel.font = GFSCityFont;
-    //    leftButton.contentEdgeInsets = UIEdgeInsetsMake(2, 4, 2, 0);
-    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [leftButton addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    CGSize btnSize = [self.cityButtonTitle sizeWithAttributes:[NSDictionary dictionaryWithObject:GFSCityFont forKey:NSFontAttributeName]];
-    leftButton.frame = CGRectMake(0, 0, btnSize.width, 40);
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    GFSShowCityBtn.cityName = self.cityButtonTitle;
+    GFSShowCityBtn.titleLabel.font = GFSCityFont;
+    
+    [GFSShowCityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [GFSShowCityBtn addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:GFSShowCityBtn];
     
     
     // 中间搜索
