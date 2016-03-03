@@ -15,6 +15,18 @@
 		EE16CFC31C861E5400636C13 /* GFSCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE16CFC21C861E5400636C13 /* GFSCollectionReusableView.m */; };
 		EE1EDCE71C8726150020E605 /* GFSSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1EDCE61C8726150020E605 /* GFSSearchViewController.m */; };
 		EE6D2B0B1C8528D200CDB817 /* GFSShowCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6D2B0A1C8528D200CDB817 /* GFSShowCityButton.m */; };
+		EEC9526B1C87DF2F0057B5FE /* GFSHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC9526A1C87DF2F0057B5FE /* GFSHttpTool.m */; };
+		EEC9526F1C87E2680057B5FE /* GFSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC9526D1C87E2680057B5FE /* GFSLoginViewController.m */; };
+		EEC952701C87E2680057B5FE /* GFSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC9526E1C87E2680057B5FE /* GFSLoginViewController.xib */; };
+		EEC952741C87E3FA0057B5FE /* GFSRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC952721C87E3FA0057B5FE /* GFSRegisterViewController.m */; };
+		EEC952751C87E3FA0057B5FE /* GFSRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC952731C87E3FA0057B5FE /* GFSRegisterViewController.xib */; };
+		EEC952781C87E44F0057B5FE /* GFSSendChechCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC952771C87E44F0057B5FE /* GFSSendChechCodeButton.m */; };
+		EEC9527B1C87EC250057B5FE /* UIViewController+GFS.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC9527A1C87EC250057B5FE /* UIViewController+GFS.m */; };
+		EEC9527F1C87FC4E0057B5FE /* GFSRemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC9527D1C87FC4E0057B5FE /* GFSRemindViewController.m */; };
+		EEC952801C87FC4E0057B5FE /* GFSRemindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC9527E1C87FC4E0057B5FE /* GFSRemindViewController.xib */; };
+		EEC952831C8810FF0057B5FE /* GFSAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC952821C8810FF0057B5FE /* GFSAccount.m */; };
+		EEC952861C88142B0057B5FE /* GFSAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC952851C88142B0057B5FE /* GFSAccountTool.m */; };
+		EEC952891C881AD60057B5FE /* GFSMeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC952881C881AD60057B5FE /* GFSMeNavigationController.m */; };
 		EEEBD7031C87454400B23F53 /* GFSDesignerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEBD7021C87454400B23F53 /* GFSDesignerViewController.m */; };
 		EEEBD7061C87455D00B23F53 /* GFSHandlerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEBD7051C87455D00B23F53 /* GFSHandlerViewController.m */; };
 		EEEBD7091C87495800B23F53 /* GFSWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEBD7081C87495800B23F53 /* GFSWorker.m */; };
@@ -99,6 +111,27 @@
 		EE1EDCE61C8726150020E605 /* GFSSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSSearchViewController.m; sourceTree = "<group>"; };
 		EE6D2B091C8528D200CDB817 /* GFSShowCityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GFSShowCityButton.h; path = ../../Home/View/GFSShowCityButton.h; sourceTree = "<group>"; };
 		EE6D2B0A1C8528D200CDB817 /* GFSShowCityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GFSShowCityButton.m; path = ../../Home/View/GFSShowCityButton.m; sourceTree = "<group>"; };
+		EEC952691C87DF2F0057B5FE /* GFSHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSHttpTool.h; sourceTree = "<group>"; };
+		EEC9526A1C87DF2F0057B5FE /* GFSHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSHttpTool.m; sourceTree = "<group>"; };
+		EEC9526C1C87E2680057B5FE /* GFSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSLoginViewController.h; sourceTree = "<group>"; };
+		EEC9526D1C87E2680057B5FE /* GFSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSLoginViewController.m; sourceTree = "<group>"; };
+		EEC9526E1C87E2680057B5FE /* GFSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFSLoginViewController.xib; sourceTree = "<group>"; };
+		EEC952711C87E3FA0057B5FE /* GFSRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSRegisterViewController.h; sourceTree = "<group>"; };
+		EEC952721C87E3FA0057B5FE /* GFSRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSRegisterViewController.m; sourceTree = "<group>"; };
+		EEC952731C87E3FA0057B5FE /* GFSRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFSRegisterViewController.xib; sourceTree = "<group>"; };
+		EEC952761C87E44F0057B5FE /* GFSSendChechCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSSendChechCodeButton.h; sourceTree = "<group>"; };
+		EEC952771C87E44F0057B5FE /* GFSSendChechCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSSendChechCodeButton.m; sourceTree = "<group>"; };
+		EEC952791C87EC250057B5FE /* UIViewController+GFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GFS.h"; sourceTree = "<group>"; };
+		EEC9527A1C87EC250057B5FE /* UIViewController+GFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GFS.m"; sourceTree = "<group>"; };
+		EEC9527C1C87FC4E0057B5FE /* GFSRemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSRemindViewController.h; sourceTree = "<group>"; };
+		EEC9527D1C87FC4E0057B5FE /* GFSRemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSRemindViewController.m; sourceTree = "<group>"; };
+		EEC9527E1C87FC4E0057B5FE /* GFSRemindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFSRemindViewController.xib; sourceTree = "<group>"; };
+		EEC952811C8810FF0057B5FE /* GFSAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSAccount.h; sourceTree = "<group>"; };
+		EEC952821C8810FF0057B5FE /* GFSAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSAccount.m; sourceTree = "<group>"; };
+		EEC952841C88142B0057B5FE /* GFSAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSAccountTool.h; sourceTree = "<group>"; };
+		EEC952851C88142B0057B5FE /* GFSAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSAccountTool.m; sourceTree = "<group>"; };
+		EEC952871C881AD60057B5FE /* GFSMeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSMeNavigationController.h; sourceTree = "<group>"; };
+		EEC952881C881AD60057B5FE /* GFSMeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSMeNavigationController.m; sourceTree = "<group>"; };
 		EEEBD7011C87454400B23F53 /* GFSDesignerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSDesignerViewController.h; sourceTree = "<group>"; };
 		EEEBD7021C87454400B23F53 /* GFSDesignerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSDesignerViewController.m; sourceTree = "<group>"; };
 		EEEBD7041C87455D00B23F53 /* GFSHandlerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSHandlerViewController.h; sourceTree = "<group>"; };
@@ -215,6 +248,60 @@
 			name = LBS;
 			sourceTree = "<group>";
 		};
+		EEC952641C87DEC30057B5FE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EEC952681C87DED80057B5FE /* Tool */,
+				EEC952651C87DEC30057B5FE /* Controller */,
+				EEC952661C87DEC30057B5FE /* Model */,
+				EEC952671C87DEC30057B5FE /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EEC952651C87DEC30057B5FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EEC9526C1C87E2680057B5FE /* GFSLoginViewController.h */,
+				EEC9526D1C87E2680057B5FE /* GFSLoginViewController.m */,
+				EEC9526E1C87E2680057B5FE /* GFSLoginViewController.xib */,
+				EEC952711C87E3FA0057B5FE /* GFSRegisterViewController.h */,
+				EEC952721C87E3FA0057B5FE /* GFSRegisterViewController.m */,
+				EEC952731C87E3FA0057B5FE /* GFSRegisterViewController.xib */,
+				EEC9527C1C87FC4E0057B5FE /* GFSRemindViewController.h */,
+				EEC9527D1C87FC4E0057B5FE /* GFSRemindViewController.m */,
+				EEC9527E1C87FC4E0057B5FE /* GFSRemindViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EEC952661C87DEC30057B5FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEC952811C8810FF0057B5FE /* GFSAccount.h */,
+				EEC952821C8810FF0057B5FE /* GFSAccount.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EEC952671C87DEC30057B5FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEC952761C87E44F0057B5FE /* GFSSendChechCodeButton.h */,
+				EEC952771C87E44F0057B5FE /* GFSSendChechCodeButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEC952681C87DED80057B5FE /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				EEC952841C88142B0057B5FE /* GFSAccountTool.h */,
+				EEC952851C88142B0057B5FE /* GFSAccountTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		EEEBD7001C872E9900B23F53 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				EEF34CFA1C841BFF00E058CC /* Other */,
+				EEC952641C87DEC30057B5FE /* Login */,
 				EEF34D2F1C842AD900E058CC /* Me */,
 				EEF34D2B1C842AD300E058CC /* Message */,
 				EEF34D011C841C1E00E058CC /* Home */,
@@ -386,6 +474,10 @@
 				EEF34D581C845D6D00E058CC /* ChineseToPinyin.m */,
 				EEF34D6F1C84B9D200E058CC /* GFSLocateTool.h */,
 				EEF34D701C84B9D200E058CC /* GFSLocateTool.m */,
+				EEC952691C87DF2F0057B5FE /* GFSHttpTool.h */,
+				EEC9526A1C87DF2F0057B5FE /* GFSHttpTool.m */,
+				EEC952791C87EC250057B5FE /* UIViewController+GFS.h */,
+				EEC9527A1C87EC250057B5FE /* UIViewController+GFS.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -496,6 +588,8 @@
 			children = (
 				EEF34D371C842B1500E058CC /* GFSMeViewController.h */,
 				EEF34D381C842B1500E058CC /* GFSMeViewController.m */,
+				EEC952871C881AD60057B5FE /* GFSMeNavigationController.h */,
+				EEC952881C881AD60057B5FE /* GFSMeNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -622,9 +716,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC952801C87FC4E0057B5FE /* GFSRemindViewController.xib in Resources */,
 				EEF34D091C84223800E058CC /* Images.xcassets in Resources */,
 				EEF34D0F1C84247000E058CC /* citiesArray.plist in Resources */,
 				EE16CFB81C86023E00636C13 /* GFSHomeCollectionViewCell.xib in Resources */,
+				EEC952701C87E2680057B5FE /* GFSLoginViewController.xib in Resources */,
+				EEC952751C87E3FA0057B5FE /* GFSRegisterViewController.xib in Resources */,
 				EEF34D111C84247000E058CC /* newarea.plist in Resources */,
 				EE16CFC01C8610B800636C13 /* GFSHomeHeaderCollectionViewCell.xib in Resources */,
 				EEF34CD31C841A0B00E058CC /* LaunchScreen.storyboard in Resources */,
@@ -704,8 +801,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC952861C88142B0057B5FE /* GFSAccountTool.m in Sources */,
 				EEF34D4D1C843EE000E058CC /* GFSCityViewHeaderView.m in Sources */,
 				EE16CFB61C86022100636C13 /* GFSHomeCollectionViewCell.m in Sources */,
+				EEC9527B1C87EC250057B5FE /* UIViewController+GFS.m in Sources */,
 				EEF34D351C842AF300E058CC /* GFSMessageViewController.m in Sources */,
 				EEF34D411C8434C700E058CC /* UIBarButtonItem+GFS.m in Sources */,
 				EEF34D591C845D6D00E058CC /* ChineseToPinyin.m in Sources */,
@@ -719,17 +818,24 @@
 				EEF34D191C84267B00E058CC /* GFSTabBarController.m in Sources */,
 				EEF34D391C842B1500E058CC /* GFSMeViewController.m in Sources */,
 				EEF34D151C84262A00E058CC /* GFSNavigationController.m in Sources */,
+				EEC952891C881AD60057B5FE /* GFSMeNavigationController.m in Sources */,
 				EEF34D001C841BFF00E058CC /* AppDelegate.m in Sources */,
 				EE16CFC31C861E5400636C13 /* GFSCollectionReusableView.m in Sources */,
+				EEC9527F1C87FC4E0057B5FE /* GFSRemindViewController.m in Sources */,
 				EEF34D711C84B9D200E058CC /* GFSLocateTool.m in Sources */,
 				EEF34D1D1C8428CC00E058CC /* GFSCollectionViewController.m in Sources */,
 				EEEBD7061C87455D00B23F53 /* GFSHandlerViewController.m in Sources */,
+				EEC952741C87E3FA0057B5FE /* GFSRegisterViewController.m in Sources */,
+				EEC9526B1C87DF2F0057B5FE /* GFSHttpTool.m in Sources */,
 				EEF34D491C843D1700E058CC /* GFSCitiesViewController.m in Sources */,
 				EEF34D211C8428E600E058CC /* GFSTableViewController.m in Sources */,
 				EEF34CC51C841A0B00E058CC /* main.m in Sources */,
+				EEC952831C8810FF0057B5FE /* GFSAccount.m in Sources */,
 				EE1EDCE71C8726150020E605 /* GFSSearchViewController.m in Sources */,
 				EEEBD7031C87454400B23F53 /* GFSDesignerViewController.m in Sources */,
+				EEC952781C87E44F0057B5FE /* GFSSendChechCodeButton.m in Sources */,
 				EEF34D251C84290100E058CC /* GFSViewController.m in Sources */,
+				EEC9526F1C87E2680057B5FE /* GFSLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

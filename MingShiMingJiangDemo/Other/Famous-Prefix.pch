@@ -9,8 +9,9 @@
 #ifndef Famous_Prefix_pch
 #define Famous_Prefix_pch
 
+#import "GFSAccountTool.h"
 #import "UIImage+GFS.h"
-
+#import "UIViewController+GFS.h"
 // 0 第三方autolayout
 #define MAS_SHORTHAND
 #define MAS_SHORTHAND_GLOBALS

@@ -163,7 +163,7 @@
 {
     GFSLog(@"-----开始定位");
     GFSLocateTool *location =  [GFSLocateTool sharedGFSLocateTool];
-    [GFSLocateTool startLocation];
+    [location startLocation];
     if (location.isUnAuthorization) {// 未授权 提示授权
         [self alertOpenLocationSwitch];
     }

@@ -243,7 +243,7 @@ static NSString * const ID = @"bottomcell";
 - (void)checkCity
 {
     GFSLocateTool *location =  [GFSLocateTool sharedGFSLocateTool];
-    [GFSLocateTool startLocation];
+    [location startLocation];
     if (location.isUnAuthorization) {// 未授权 提示授权
         [self alertOpenLocationSwitch];
     }
@@ -251,16 +251,28 @@ static NSString * const ID = @"bottomcell";
         // 定位成功
         
         NSString *cityName = [address substringToIndex:address.length-1];
-        GFSLog(@"-----%@",cityName);
+//        GFSLog(@"-----%@",cityName);
         if (![GFSShowCityBtn.cityName isEqualToString:cityName]) {
             [self alertToChangeCity:cityName];
         }
         
     } failure:^{
         // 失败
-//        [self alertOpenLocationFailure];
+        [self alertOpenLocationFailure];
     }];
 
+}
+/**
+ *  提醒定位失败
+ */
+- (void)alertOpenLocationFailure
+{
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"定位失败请稍等或者手动选择相应城市" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alertView addAction:cancelAction];
+    
+    [self presentViewController:alertView animated:YES completion:nil];
+    
 }
 /**
  *  提醒切换城市

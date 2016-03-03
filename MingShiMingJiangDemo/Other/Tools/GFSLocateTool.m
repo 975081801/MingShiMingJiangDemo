@@ -49,10 +49,10 @@ Singleton_m(GFSLocateTool)
     }
     
 }
-+ (void)startLocation
+- (void)startLocation
 {
-    [[GFSLocateTool sharedGFSLocateTool] getAuthorization];
-    [[GFSLocateTool sharedGFSLocateTool].locationManager startUpdatingLocation];
+    [self getAuthorization];
+    [self.locationManager startUpdatingLocation];
 }
 #pragma mark - LocationManager
 - (CLLocationManager *)locationManager
@@ -100,6 +100,15 @@ Singleton_m(GFSLocateTool)
             }
         }
     }];
+}
+#pragma mark - 系统方法计算距离
+- (double)countLineDistanceDest:(double)lon1 dest_Lat:(double)lat1 self_Lon:(double)lon2 self_Lat:(double)lat2
+{
+    //计算2个经纬度之间的直线距离
+    CLLocation *destloc = [[CLLocation alloc] initWithLatitude:lat1 longitude:lon1];
+    CLLocation *selfloc = [[CLLocation alloc] initWithLatitude:lat2 longitude:lon2];
+    CLLocationDistance distance = [destloc distanceFromLocation:selfloc];
+    return distance;
 }
 
 @end

@@ -20,7 +20,7 @@ Singleton_h(GFSLocateTool)
 @property (nonatomic,strong) void(^locationCompleteBlock)(double longitude,double latitude);
 - (void)getAuthorization;//授权
 //- (void)alertOpenLocationSwitch;//提示用户打开定位开关
-+ (void)startLocation;//点击某个按钮开始定位
+- (void)startLocation;//点击某个按钮开始定位
 /**
  *  反地理编码 （通过经纬度获取地址）
  *
@@ -30,4 +30,14 @@ Singleton_h(GFSLocateTool)
  *  @param failure       失败block
  */
 - (void)reverseGeocodeWithlatitude:(CLLocationDegrees )latitude longitude:(CLLocationDegrees)longitude success:(void(^)(NSString *address))success failure:(void(^)())failure;
+/**
+ *  经纬度计算两地之间距离
+ *
+ *  @param lon1      目标的的经度
+ *  @param lat1      目标的纬度
+ *  @param lon2      自己的经度
+ *  @param lat2      自己的纬度
+ *  @param 返回值     距离（米）
+ */
+-(double) LantitudeLongitudeDist:(double)lon1 other_Lat:(double)lat1 self_Lon:(double)lon2 self_Lat:(double)lat2;
 @end

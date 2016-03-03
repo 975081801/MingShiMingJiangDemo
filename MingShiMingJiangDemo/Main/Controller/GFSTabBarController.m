@@ -11,6 +11,9 @@
 #import "GFSMessageViewController.h"
 #import "GFSHomeCollectionViewController.h"
 #import "GFSNavigationController.h"
+#import "GFSLoginViewController.h"
+#import "GFSMeNavigationController.h"
+
 @interface GFSTabBarController ()
 
 @end
@@ -35,13 +38,38 @@
      */
     // 1.首页
     GFSHomeCollectionViewController *home = [[GFSHomeCollectionViewController  alloc]init];
-    [self setupChildViewController:home withTitle:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
+    [self setupChildViewController:home withTitle:@"首页" imageName:@"" selectedImageName:@""];
     // 2.消息
     GFSMessageViewController *message = [[GFSMessageViewController alloc]init];
-    [self setupChildViewController:message withTitle:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
+    [self setupChildViewController:message withTitle:@"消息" imageName:@"" selectedImageName:@""];
     // 3. 我
-    GFSMeViewController *me = [[GFSMeViewController alloc]init];
-    [self setupChildViewController:me withTitle:@"我" imageName:@"tabbar_profile" selectedImageName:@"tabbar_profile_selected"];
+    [self setMe];
+}
+- (void)setMe
+{
+    // 取出保存的账户
+    GFSAccount *account = [GFSAccountTool getAccount];
+    if (account) {
+        // 有
+        if (account.state) {
+            // 是登录状态
+#warning 应该在此时传入 保存的信息
+            GFSMeViewController *me = [[GFSMeViewController alloc]init];
+            GFSMeNavigationController *meNav = [[GFSMeNavigationController alloc]initWithRootViewController:me];
+
+             [self addChildViewController:meNav];
+        }else{
+            GFSLoginViewController *log = [[GFSLoginViewController alloc]init];
+#warning 传入保存的账号和密码 不用再次输入
+            GFSMeNavigationController *meNav = [[GFSMeNavigationController alloc]initWithRootViewController:log];
+            [self addChildViewController:meNav];
+        }
+        
+    }else{
+        GFSLoginViewController *log = [[GFSLoginViewController alloc]init];
+        GFSMeNavigationController *meNav = [[GFSMeNavigationController alloc]initWithRootViewController:log];
+        [self addChildViewController:meNav];
+    }
 }
 /**
  *  初始化一个子控制器

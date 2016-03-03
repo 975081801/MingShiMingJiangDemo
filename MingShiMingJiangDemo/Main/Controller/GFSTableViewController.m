@@ -8,6 +8,7 @@
 
 #import "GFSTableViewController.h"
 #import "MJRefresh.h"
+
 @interface GFSTableViewController ()
 
 @end
@@ -40,14 +41,21 @@
     self.tableView.mj_footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     
 }
+//- (void)alertShow
+//{
+//    [self showAlertViewIndeterWith:@selector(loadNewData)];
+//}
 /**
  *  可在此方法内进行下拉刷新动作  子类可覆盖此方法
  */
 - (void)loadNewData
 {
     // 一般要进行请求参数对比 加载最新的
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
+        
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
     });
 }
 /**
